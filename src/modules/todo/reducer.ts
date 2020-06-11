@@ -11,11 +11,9 @@ const initialState: TodoState = {
 }
 
 export function todoReducer(
-    state: TodoState,
+    state = initialState,
     action: TodoActionTypes
 ): TodoState {
-    if (state === undefined) return initialState;
-
     switch (action.type) {
         case ADD_TODO:
             return produce(state, (draft) => {
